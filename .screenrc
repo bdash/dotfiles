@@ -1,0 +1,11 @@
+startup_message off
+shell "-/bin/bash"
+defscrollback 10240
+escape ^Oo
+vbell off
+hardstatus on
+hardstatus alwayslastline
+hardstatus string "%{.bW}%-w%{.rW}%n %t%{-}%+w %=%{..G} %H %{..Y} %m/%d %C%a "
+termcapinfo rxvt "ks=E[?1lE:kuE[A:kd=E[B:kl=E[D:kr=E[C:kh=E[5~:kH=E[F"
+termcapinfo xterm|xterms|xs|rxvt|xterm-color ti@:te@
+termcapinfo xterm-256color|xterm-color|xterm|xterms|xs|rxvt ti@:te@
