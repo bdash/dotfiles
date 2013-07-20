@@ -1,0 +1,16 @@
+[user]
+	name = Mark Rowe
+	email = mrowe@bdash.net.nz
+[diff]
+	renamelimit = 0
+	renames = copies
+	algorithm = histogram
+[sendemail]
+	smtpserver = relay.apple.com
+	thread = no
+[clean]
+	requireForce = false
+[core]
+	autocrlf = input
+[push]
+	default = simple
