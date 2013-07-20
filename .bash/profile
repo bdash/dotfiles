@@ -1,0 +1,10 @@
+for file in ~/.bash/{path,env,history,prompt}; do
+    [[ -r "$file" ]] && . "$file"
+done
+
+for file in ~/.bash/completion/*; do
+    [[ -r "$file" ]] && . "$file"
+done
+
+# Disable flow control.
+stty -ixon
