@@ -8,3 +8,9 @@ done
 
 # Disable flow control.
 stty -ixon
+
+# Default to work email address since most machines are work machines.
+export EMAIL=mrowe@apple.com
+
+machine_file=~/.bash/machine/$(hostname -s)
+[[ -r "$machine_file" ]] && . "$machine_file"
