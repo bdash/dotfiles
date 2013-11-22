@@ -6,8 +6,8 @@ for file in ~/.bash/completion/*; do
     [[ -r "$file" ]] && . "$file"
 done
 
-# Disable flow control.
-stty -ixon
+# Disable flow control if we have a TTY
+[[ -s 0 ]] && stty -ixon
 
 # Default to work email address since most machines are work machines.
 export EMAIL=mrowe@apple.com
