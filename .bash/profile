@@ -11,6 +11,7 @@ done
 
 # Default to work email address since most machines are work machines.
 export EMAIL=mrowe@apple.com
+export EMAIL_ADDRESS=$EMAIL
 
 machine_file=~/.bash/machine/$(hostname -s)
 [[ -r "$machine_file" ]] && . "$machine_file"
