@@ -9,8 +9,7 @@ done
 # Disable flow control if we have a TTY
 [[ -s 0 ]] && stty -ixon
 
-# Default to work email address since most machines are work machines.
-export EMAIL=mrowe@apple.com
+export EMAIL=mrowe@bdash.net.nz
 export EMAIL_ADDRESS=$EMAIL
 
 machine_file=~/.bash/machine/$(hostname -s)
