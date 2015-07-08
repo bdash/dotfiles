@@ -1,6 +1,6 @@
 [submodule ".emacs.d"]
 	path = .emacs.d
-	url = bdash.net.nz:~/git/emacs.d.git
+	url = https://github.com/bdash/emacs.d
 [submodule ".bash/z"]
 	path = .bash/z
 	url = https://github.com/rupa/z
