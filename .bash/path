@@ -1,1 +1,1 @@
-export PATH=/usr/local/bin:~/Applications/bin:~/Documents/Work/Safari/Internal/Tools/Scripts:~/Documents/Work/Safari/OpenSource/Tools/Scripts:$PATH
+export PATH=/usr/local/bin:~/Applications/bin:$PATH
