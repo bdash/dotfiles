@@ -20,3 +20,5 @@
 	unpushed = log --branches --not --remotes --color --graph --pretty=format:'%C(red)%h%C(reset) -%C(yellow)%d%C(reset) %s %C(green)(%cr) %C(yellow)<%an>%C(reset)' --abbrev-commit
 [color]
 	ui = auto
+[rerere]
+	enabled = 1
