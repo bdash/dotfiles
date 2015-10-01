@@ -6,3 +6,5 @@ if [[ "$TERM" != "screen" && "$TMUX" == "" ]]; then
         tmux new-session -s $TMUX_SESSION
     fi
 fi
+
+export MAKEFLAGS="--jobs $(( $(nproc) + 1))"
