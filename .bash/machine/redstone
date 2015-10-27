@@ -1,0 +1,8 @@
+if [[ "$TERM" != "screen" && "$TMUX" == "" ]]; then
+    TMUX_SESSION=0
+    if tmux has-session -t $TMUX_SESSION 2>/dev/null; then
+	tmux attach-session -t $TMUX_SESSION
+    else
+	tmux new-session -s $TMUX_SESSION
+    fi
+fi
