@@ -8,3 +8,8 @@ if [[ "$TERM" != "screen" && "$TMUX" == "" ]]; then
 fi
 
 export MAKEFLAGS="--jobs $(( $(nproc) + 1))"
+
+# Android SDK and NDK, installed via umake.
+export NDK_ROOT=/home/mrowe/.local/share/umake/android/android-ndk
+export ANDROID_HOME=/home/mrowe/.local/share/umake/android/android-sdk
+export PATH=$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$PATH
