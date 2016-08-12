@@ -1,4 +1,4 @@
-for file in ~/.bash/{path,env,history,prompt,z/z.sh}; do
+for file in ~/.bash/{path,env,history,prompt,z/z.sh,rbenv}; do
     [[ -r "$file" ]] && . "$file"
 done
 
