@@ -1,0 +1,2 @@
+# Disable flow control if we have a TTY
+[[ -s 0 ]] && stty -ixon

@@ -4,3 +4,6 @@
 [submodule ".bash/z"]
 	path = .bash/z
 	url = https://github.com/rupa/z
+[submodule ".zsh/z"]
+	path = .zsh/z
+	url = https://github.com/rupa/z

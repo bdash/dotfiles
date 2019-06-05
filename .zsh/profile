@@ -1,0 +1,14 @@
+autoload -U select-word-style compinit
+
+for file in ~/.zsh/{misc/{path,env,history,prompt,email,rbenv,cargo},z/z.sh}; do
+    [[ -r "$file" ]] && . "$file"
+done
+
+for file in ~/.zsh/completion/*; do
+    [[ -r "$file" ]] && . "$file"
+done
+
+machine_file=~/.zsh/machine/$(hostname -s)
+[[ -r "$machine_file" ]] && . "$machine_file"
+
+compinit
