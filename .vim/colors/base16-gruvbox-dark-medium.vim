@@ -1,0 +1,1 @@
+base16/colors/base16-gruvbox-dark-medium.vim
