@@ -1,7 +1,7 @@
 autoload -U select-word-style compinit
 
-for file in ~/.zsh/{misc/{path,env,history,prompt,email,rbenv,cargo},z/z.sh}; do
-    [[ -r "$file" ]] && . "$file"
+for file in ~/.zsh/{misc/{path,env,history,prompt,color,email,rbenv,cargo},z/z.sh}; do
+	[[ -r "$file" ]] && . "$file"
 done
 
 for file in ~/.zsh/completion/*; do
