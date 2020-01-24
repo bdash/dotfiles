@@ -1,0 +1,11 @@
+# Red
+--colors=match:fg:1
+--colors=match:style:nobold
+
+# Green
+--colors=path:fg:2
+--colors=path:style:nobold
+
+# Blue
+--colors=line:fg:4
+--colors=line:style:nobold
