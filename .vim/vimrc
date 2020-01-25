@@ -1,13 +1,10 @@
-if filereadable(expand("~/.vimrc_background"))
-  let base16colorspace=256
-  source ~/.vimrc_background
-endif
-
 call plug#begin('~/.vim/plugged')
 
 Plug 'rust-lang/rust.vim'
 Plug 'prabirshrestha/async.vim'
 Plug 'dense-analysis/ale'
+Plug 'itchyny/lightline.vim'
+Plug 'maximbaz/lightline-ale'
 
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -19,5 +16,23 @@ endif
 
 call plug#end()
 
-let g:ale_linters = {'rust': ['rls']}
+" Keep mouse interaction working within tmux
+set mouse=a
+
 let g:deoplete#enable_at_startup = 1
+let g:ale_linters = {'rust': ['rls']}
+
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
+
+" Press `K` to view the type in the gutter
+nnoremap <silent> K :ALEHover<CR>
+" Type `gd` to go to definition
+nnoremap <silent> gd :ALEGoToDefinition<CR>
+" Meta-click (command-click) to go to definition
+nnoremap <M-LeftMouse> <LeftMouse>:ALEGoToDefinition<CR>
+
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace = 256
+  source ~/.vimrc_background
+endif
