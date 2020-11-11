@@ -1,2 +1,2 @@
 typeset -U path
-path=(/usr/local/bin ~/Applications/bin $path)
+path=(/usr/local/bin ~/Applications/bin ~/.local/bin $path)
