@@ -1,0 +1,11 @@
+if [[ "$TERM" != "screen" && "$TMUX" == "" ]]; then
+  FREE_SESSION=$(tmux ls >/dev/null | grep -v attached | head -n1 | cut -d ':' -f1)
+
+  if [[ $FREE_SESSION != "" ]]; then
+    tmux attach-session -t "$FREE_SESSION"
+  else
+    tmux new-session -t devel
+  fi
+fi
+
+export MAKEFLAGS="--jobs $(( $(nproc) + 1))"
