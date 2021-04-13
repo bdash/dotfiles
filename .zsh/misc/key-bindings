@@ -1,0 +1,2 @@
+# Use emacs-style key bindings for line editing
+bindkey -e
