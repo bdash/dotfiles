@@ -1,4 +1,4 @@
 export CVS_RSH=ssh
-export EDITOR=emacs
-export SVN_LOG_EDITOR=emacs
+export EDITOR=nvim
+export SVN_LOG_EDITOR=nvim
 export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
