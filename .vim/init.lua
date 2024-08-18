@@ -7,3 +7,4 @@ vim.opt.expandtab = true
 vim.opt.shiftwidth = indent
 vim.opt.softtabstop = indent
 vim.opt.tabstop = indent
+
