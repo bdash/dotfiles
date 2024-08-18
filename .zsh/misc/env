@@ -2,3 +2,4 @@ export CVS_RSH=ssh
 export EDITOR=nvim
 export SVN_LOG_EDITOR=nvim
 export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
+export MOSH_TITLE_NOPREFIX=1
