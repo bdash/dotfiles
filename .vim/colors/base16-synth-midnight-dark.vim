@@ -1,1 +1,0 @@
-base16/colors/base16-synth-midnight-dark.vim

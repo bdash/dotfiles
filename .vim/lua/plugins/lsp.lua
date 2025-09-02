@@ -6,10 +6,16 @@ return {
         local lspconfig = require("lspconfig")
         local lsp_zero = require("lsp-zero")
 
-        lsp_zero.on_attach(function(_, bufnr)
+        lsp_zero.on_attach(function(event, bufnr)
             -- Use lsp-zero's default keymaps. They seem fine.
             -- https://lsp-zero.netlify.app/v4.x/language-server-configuration.html
             lsp_zero.default_keymaps({ buffer = bufnr })
+            local opts = { buffer = event.buf }
+
+            vim.keymap.set({ 'n', 'x' }, '<leader>cf', function()
+                vim.lsp.buf.format({ async = false, timeout_ms = 10000 })
+            end, opts)
+            vim.keymap.set({ 'n', 'x' }, '<leader>d', vim.diagnostic.open_float)
         end)
 
         require("mason").setup()
