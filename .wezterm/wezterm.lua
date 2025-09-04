@@ -10,6 +10,8 @@ local config = wezterm.config_builder()
 config.default_cwd = wezterm.home_dir
 config.selection_word_boundary = ' \t\n{}[]()"\'`:'
 
+config.scrollback_lines = 100000
+
 -- Simple key bindings (non-leader)
 local keys = {
   { key = 'k', mods = 'CMD', action = act.ClearScrollback 'ScrollbackAndViewport' },
