@@ -8,6 +8,7 @@ local config = wezterm.config_builder()
 
 -- New windows and tabs start in home directory
 config.default_cwd = wezterm.home_dir
+config.selection_word_boundary = ' \t\n{}[]()"\'`:'
 
 -- Simple key bindings (non-leader)
 local keys = {
@@ -33,6 +34,29 @@ ssh_domains.setup(config)
 tmux.setup(config, keys)
 
 config.keys = keys
+
+config.mouse_bindings = {
+    -- Disable the default click behavior
+    {
+      event = { Up = { streak = 1, button = "Left"} },
+      mods = "NONE",
+      -- TODO: Do I want selecting to implicitly copy?
+      action = act.CompleteSelection 'ClipboardAndPrimarySelection',
+    },
+    -- Cmd-click will open the link under the mouse cursor
+    {
+        event = { Up = { streak = 1, button = "Left" } },
+        mods = "CMD",
+        action = act.OpenLinkAtMouseCursor,
+    },
+    -- Disable the Cmd-click down event to stop programs from seeing it when a URL is clicked
+    {
+        event = { Down = { streak = 1, button = "Left" } },
+        mods = "CMD",
+        action = act.Nop,
+    },
+
+}
 
 return config
 
