@@ -15,7 +15,20 @@ return {
             vim.keymap.set({ 'n', 'x' }, '<leader>cf', function()
                 vim.lsp.buf.format({ async = false, timeout_ms = 10000 })
             end, opts)
-            vim.keymap.set({ 'n', 'x' }, '<leader>d', vim.diagnostic.open_float)
+            vim.keymap.set({ 'n', 'x' }, '<leader>d', vim.diagnostic.open_float, { desc = "LSP [d]iagnostics" })
+            vim.keymap.set({ 'n', 'x' }, '<leader>ca', function()
+                require('fzf-lua').lsp_code_actions {
+                    winopts = {
+                        relative = 'cursor',
+                        width = 0.6,
+                        height = 0.6,
+                        row = 1,
+                        preview = { vertical = 'up:70%' },
+                    },
+                }
+            end, { desc = "LSP [c]ode [a]actions" })
+            vim.keymap.set({ 'n', 'x' }, '<leader>s', '<cmd>LspClangdSwitchSourceHeader<cr>', { desc = "[s]witch between source and header" })
+            vim.keymap.set({ 'n', 'x' }, '<leader>gd', vim.lsp.buf.definition, { desc = "[g]o to [d] definition (LSP)" })
         end)
 
         require("mason").setup()
