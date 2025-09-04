@@ -28,6 +28,14 @@ local keys = {
   -- Send a literal newline for Shift-Return and Opt-Return (for Claude app)
   { key = 'Return', mods = 'SHIFT', action = act.SendString '\n' },
   { key = 'Return', mods = 'OPT', action = act.SendString '\n' },
+
+  -- Cmd-A to copy entire scrollback
+  { key = 'a', mods = 'CMD', action = wezterm.action_callback(function(window, pane)
+    local dims = pane:get_dimensions()
+    local txt = pane:get_text_from_region(0, dims.scrollback_top, 0, dims.scrollback_top + dims.scrollback_rows)
+    window:copy_to_clipboard(txt:match('^%s*(.-)%s*$')) -- trim leading and trailing whitespace
+    end)
+  },
 }
 
 -- Setup modules
